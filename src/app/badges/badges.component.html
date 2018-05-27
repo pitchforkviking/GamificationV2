@@ -1,0 +1,116 @@
+<!--Header-->
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Gamification V2</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" routerLink="/dashboard">Home</a>
+    <a class="p-2 text-dark" routerLink="/badges">Badges</a>
+    <a class="p-2 text-dark" routerLink="/rewards">Rewards</a>
+  </nav>
+  <a class="btn btn-outline-primary" routerLink="/login">Sign Out</a>
+</div>
+
+
+<!--Main-->
+
+
+<ngb-accordion [closeOthers]="true" activeIds="static-1">
+  <ngb-panel id="static-1" title="List Badges">
+    <ng-template ngbPanelContent>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th>Badge</th>
+              <th>Description</th>
+              <th>Image</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pilot</td>
+              <td>Completed a Quiz</td>
+              <td><a href="#">View Image</a></td>
+            </tr>
+            <tr>
+              <td>Rider</td>
+              <td>Voted on a Poll</td>
+              <td><a href="#">View Image</a></td>
+            </tr>
+            <tr>
+              <td>Samaritan</td>
+              <td>Commented on a Post</td>
+              <td><a href="#">View Image</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel id="static-2" title="Add Badges">
+    <ng-template ngbPanelContent>
+      <div class="col-md-12 order-md-3 text-center">
+
+        <form class="needs-validation" novalidate="">
+
+          <div class="row">
+
+            <div class="col-md-4 mb-3">
+              <label for="rule">Rule</label>
+              <select class="custom-select d-block w-100" id="rule" required="">
+                <option value="">Choose...</option>
+                <option>QuizComplete</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid option.
+              </div>
+            </div>
+
+
+            <div class="col-md-4 mb-3">
+              <label for="badge-name">Badge Name</label>
+              <input class="form-control" id="badge-name" required="" type="text" placeholder="Long Haul Pilot">
+              <div class="invalid-feedback">
+                Rule name is required
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="badge-description">Badge Description <span class="text-muted">(Optional)</span></label>
+              <input class="form-control" id="badge-description" type="text" placeholder="Completed 10 Quizzes">
+            </div>
+          </div>
+
+          <div class="row mx-auto">
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Upload</span>
+              </div>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile01">
+                <label class="custom-file-label" for="inputGroupFile01">Choose an Image for the Badge</label>
+              </div>
+            </div>
+
+          </div>
+
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Add Badge</button>
+        </form>
+      </div>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
+
+
+
+
+
+<!--Footer-->
+<footer class="my-5 pt-5 text-muted text-center text-small">
+  <p class="mb-1">© 2017-2018 ShotClasses</p>
+  <ul class="list-inline">
+    <li class="list-inline-item"><a href="#">Privacy</a></li>
+    <li class="list-inline-item"><a href="#">Terms</a></li>
+    <li class="list-inline-item"><a href="#">Support</a></li>
+  </ul>
+</footer>
